@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Input Form</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    .check-loi {
+        color: #ff0000;
+        /* Màu chữ màu đỏ */
+        font-size: 14px;
+        /* Kích thước font 14px */
+        font-weight: bold;
+        /* Đậm */
+    }
+</style>
+</head>
+<body>
+<div class="container" style="max-width: 26rem; margin-top: 20px;">
+    <form th:action="@{/register}" th:object="${emailListRequest}" method="post" id="emailForm">
+        <!-- Email input -->
+        <div class="form-group mb-4">
+            <label for="nameEmail">Email addresses</label>
+            <input   type="text" class="form-control" id="nameEmail" name="nameEmails" rows="2" placeholder="Enter email addresses" required></input>
+            <span class="check-loi" th:text="${checkEmailKtt}"></span> <br>
+            <span class="check-loi" th:text="${checkEmail}"></span>
+        </div>
+
+        <!-- Message input -->
+        <div class="form-group mb-4">
+            <label for="body">Message</label>
+            <input class="form-control" id="body" name="body" rows="4" placeholder="Enter your message" required></input>
+        </div>
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
